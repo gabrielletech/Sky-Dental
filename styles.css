@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    --white--: #ffffff;
+    --light-gray--: #efefef;
+    --mid-gray--: #636262;
+    --linear--: linear-gradient(90.17deg, #4ac7b3, 0.15%, #2dabeb 99.87%);
+    --black--: #000000;
+    --off-white--: #f6f9fe;
+    --blue--: #4ac7b3;
+    background: var(--white--);
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.row {
+    display: flex;
+}
+
+.flex {
+    flex-wrap: wrap;
+    gap: clamp(2em, 5vw, 5em);
+
+}
+
+.flex>* {
+    flex: 1 1 25em;
+}
+
+.column {
+    display: grid;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto
+}
+
+/* Navigation */
+header {
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 2em 0;
+}
+
+nav ul {
+    align-items: center;
+    gap: 2em;
+}
+
+nav a {
+    font-size: 16px;
+    color: var(--black--);
+}
+
+nav a:hover {
+    color: var(--blue--);
+}
+
+.toggleContact.c-active::after {
+    content: "";
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    background-image: url(./images/x\ -\ dark.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: center;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+}
+
+.contactMenu {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    min-height: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4em 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+.contactMenu.c-active {
+    position: absolute;
+    min-height: 100vh;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 9;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+/* End Navigation */
